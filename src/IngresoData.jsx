@@ -53,7 +53,7 @@ function IngresoData() {
     <div>
       {dataList.map((data, index) => (
         <div key={index} className={style.containerDescription}>
-          <div>{data.fecha || fechaActual}</div>
+          <div className={style.fecha}>{data.fecha || fechaActual}</div>
           <div className={style.detalle}>
             <div className={style.category}>{data.categoria}</div>
             <div className={style.Sur}>{data.detalle || "detalle"} </div>

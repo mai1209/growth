@@ -153,3 +153,10 @@ p {
   color: #FF0000;
 }
 
+.yearDate{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
