@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@1,620&display=swap");
+
+.containerMoney {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.p {
+  color: white;
+  margin: 0;
+}
+
+.containerPrice {
+  display: flex;
+  justify-content: center;
+}
+
+.price {
+  color: white;
+  font-size: 50px;
+  margin: 0;
+}
+
+.containerTitles {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.39);
+  margin: 10px;
+}
+
+.containerNumbers {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  font-size: 25px;
+  background-color: rgba(128, 128, 128, 0.39);
+}
+
+.ingresos {
+  color: rgb(62, 150, 62);
+  font-weight: bold;
+}
+
+.egresos {
+  color: red;
+  font-weight: bold;
+}
+
+.total {
+  font-weight: bold;
+}
+
+p {
+  margin: 8px;
+}
+
+.containerDescription {
+  color: white;
+  font-size: 10px;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  font-weight: 100;
+  padding: 0 5px;
+}
+
+.Def {
+  background-color: red;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.Sur {
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+
+.category {
+  background-color: #35725f;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.containerDate {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  height: 100%;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  font-size: 40.65px;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.year {
+  color: #ff3465;
+  padding: 0;
+  margin: 0;
+}
+
+.yearhora {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.mes {
+  font-size: 10.68px;
+  padding: 0;
+  margin: 0;
+}
+
+.numero{
+  font-size: 50px;
+}
+
+
+.incom{
+  color: #50FF34;
+}
+
+.egress{
+  color: #FF0000;
+}
+

@@ -1,0 +1,48 @@
+body{
+    background-image: url("../assets/fondo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  
+  }
+  
+  
+  .containerNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    padding: 10px;
+  }
+  
+  .logo{
+    font-size: 15px;
+    color:white;
+    cursor: pointer;
+  }
+  
+  .settingIcon{
+    cursor: pointer;
+  }
+  
+  span{
+    color: crimson;
+  }
+  
+  
+  @media (min-width: 600px)  {
+    .logo{
+      font-size: 20px;
+     
+    }
+    
+    .settingIcon{
+      width: 35px;
+      height: 35px;
+    }
+    
+  }
+  
+  
