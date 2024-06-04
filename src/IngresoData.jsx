@@ -15,7 +15,7 @@ function IngresoData() {
       {dataList.map((data, index) => (
         <div key={index} className={style.containerDescription}>
           <div className={style.containerDate}>
-            <p className={style.day}> {new Date(data.fecha).getDate()}</p>
+            <p className={style.day}> {new Date(data.fecha).getDate() + 1}</p>
             <div className={style.yearDate}>
               <p className={style.year}>
                 {" "}
