@@ -3,8 +3,9 @@ import logo from "./assets/settings_24dp.svg";
 import Footer from "./Footer"
 import IngresoData from "./IngresoData";
 import PropTypes from 'prop-types';
+import Money from "./Money";
 
-function Home({isChecked}) {
+function Home({isChecked }) {
   return (
     <>
       <div className={style.containerNav}>
@@ -13,13 +14,15 @@ function Home({isChecked}) {
         </h1>
         <img className={style.settingIcon} src={logo} alt="icon-setting" />
       </div>
+      <Money ></Money>
       <IngresoData  isChecked={isChecked}></IngresoData>
       <Footer></Footer>
     </>
   );
 }
 Home.propTypes = {
-  isChecked: PropTypes.bool
+  isChecked: PropTypes.bool,
+ 
 };
 
 export default Home;

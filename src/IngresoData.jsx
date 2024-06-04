@@ -10,18 +10,20 @@ function IngresoData() {
     setDataList(storedDataList);
   }, []);
 
+
+
   return (
     <div>
       {dataList.map((data, index) => (
         <div key={index} className={style.containerDescription}>
           <div className={style.containerDate}>
-            <p className={style.day}> {new Date(data.fecha).getDate() + 1}</p>
+            <p className={style.day}> {new Date(data.fecha).getDate() +1}</p>
             <div className={style.yearDate}>
               <p className={style.year}>
                 {" "}
                 {new Date(data.fecha).toLocaleString("es-ES", { month: "long" })}{" "}
               </p>
-              <p className={style.mes}>
+              <p className={style.mes}> 
                 {" "}
                 {new Date(data.fecha).getFullYear()}{" "}
               </p>
