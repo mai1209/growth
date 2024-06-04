@@ -1,20 +1,16 @@
 import { Link } from "react-router-dom";
-
 import style from "./style/Add.module.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
+import Categorie from "./Categories";
 
 function Add() {
- 
-
- 
-const initialFormData = {
+  const initialFormData = {
+    categoria: "",
     añadirIngresoEgreso: "",
-    categoria: "categoria",
     detalle: "",
     fecha: "",
-    check:false,
+    check: false,
     check2: false,
   };
 
@@ -28,6 +24,7 @@ const initialFormData = {
   }, []);
 
   const handleChange = (e) => {
+    //guardar el estado del checkbox
     const { name, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
 
@@ -36,34 +33,37 @@ const initialFormData = {
       [name]: newValue,
     }));
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
+  //guardar la categoria en el local storage
+  const handleCategorySelection = (category) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      categoria: category,
+    }));
+    localStorage.setItem("selectedCategory", category); // Guardar en localStorage
+  };
+
+  const handleSubmit = () => {
     const newData = { ...formData };
     const newDataList = [...formDataList, newData];
     localStorage.setItem("formDataList", JSON.stringify(newDataList));
 
-    // Resetear el formulario
-    e.target.reset();
     setFormData(initialFormData); // Restablecer el estado del formulario
-    setFormDataList(newDataList);
+    setFormDataList(newDataList); //restablecer la lista de datos
   };
 
-  //para obtener la fecha del dia en formato año-mes-dia
-  const [fechaActual, setFechaActual] = useState("");
+  
 
-  useEffect(() => {
-    const obtenerFechaActual = () => {
-      const fecha = new Date();
-      const dia = ("0" + fecha.getDate()).slice(-2);
-      const mes = ("0" + (fecha.getMonth() + 1)).slice(-2);
-      const ano = fecha.getFullYear();
-      const fechaFormateada = `${ano}-${mes}-${dia}`;
-      setFechaActual(fechaFormateada);
-    };
-
-    obtenerFechaActual();
-  }, []);
+//mostrar un error cuando se clickean los dos checkbox
+  const showError = () => {
+    if (formData.check && formData.check2 === true) {
+      return (
+        <div className="error-message">Only one checkbox can be selected</div>
+      );
+    } else {
+      return "";
+    }
+  };
 
   return (
     <div className={style.containerAdd}>
@@ -99,6 +99,8 @@ const initialFormData = {
         </div>
         <div className={style.label}>
           <label htmlFor="dropdown">Añadir Categoria:</label>
+
+          <Categorie onSelectCategory={handleCategorySelection}></Categorie>
         </div>
         <div className={style.label}>
           <label htmlFor="detalle">Añadir Detalle</label>
@@ -115,11 +117,10 @@ const initialFormData = {
           <label htmlFor="fecha">Modificar Fecha </label>
 
           <input
-            name="fecha"
-            type="text"
-            placeholder={fechaActual}
-            value={formData.fecha}
-            onChange={handleChange}
+             name="fecha"
+             type="date"
+             value={formData.fecha}
+             onChange={handleChange}
           />
         </div>
         <div className={`${style.label} ${style.check}`}>
@@ -134,16 +135,21 @@ const initialFormData = {
           </label>
 
           <label className={style.checkbox}>
-            Add Egress <input   name="check2"
+            Add Egress{" "}
+            <input
+              name="check2"
               type="checkbox"
               checked={formData.check2} // Utilizamos el estado del checkbox del formulario
-              onChange={handleChange}/>
+              onChange={handleChange}
+            />
           </label>
         </div>
-        <div className={style.btn}>
-          <button type="submit"> Add</button>
-        </div>
-  
+        {showError()}
+        <Link className={style.link} to="/" onClick={handleSubmit}>
+          <div className={style.btn}>
+            <button type="button"> Add</button>
+          </div>
+        </Link>
       </form>
     </div>
   );

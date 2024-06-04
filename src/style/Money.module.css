@@ -104,7 +104,7 @@ p {
 .containerDate {
   display: flex;
   justify-content: center;
-  gap: 2px;
+  gap: 8px;
   height: 100%;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -147,10 +147,12 @@ p {
 
 .incom{
   color: #50FF34;
+  font-size: 20px ;
 }
 
 .egress{
   color: #FF0000;
+  font-size: 20px ;
 }
 
 .yearDate{

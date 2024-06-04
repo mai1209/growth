@@ -1,54 +1,43 @@
-.containerFooter{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.39);
-    display: flex;
-    justify-content:space-around ;
-    height: 70px;
-    
-    
-    }
-    
-    .containerIcon{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    
-    }
-    
-    .titleIcon{
-        color:white;
-        font-size: 10px;
-        margin: 0;
-       
-    }
-    
-    .settingIcon{
-       cursor: pointer;
-      }
-    
-    .settingIcon:hover{
-       fill:  crimson;
-    }
-    
-    
-    
-    
-    
-    
-    
-      @media (min-width: 600px)  {
-    
-        .titleIcon{
-        font-size: 15px;
-        }
-        
-        .settingIcon{
-          width: 35px;
-          height: 35px;
-        }
-        
-      }
-      
+.containerFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.39);
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+}
+
+.containerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.titleIcon {
+  color: white;
+  font-size: 10px;
+  margin: 0;
+}
+
+.settingIcon {
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+}
+
+.settingIcon:hover {
+  fill: crimson;
+}
+
+@media (min-width: 600px) {
+  .titleIcon {
+    font-size: 15px;
+  }
+
+  .settingIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
