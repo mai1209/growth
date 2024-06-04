@@ -10,7 +10,10 @@ function IngresoData() {
     setDataList(storedDataList);
   }, []);
 
-
+  const formatNumber = (number) => {
+    return number.toLocaleString('es', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/\./g, 'x').replace(/,/g, '.').replace(/x/g, ',');
+  };
+        
 
   return (
     <div>
@@ -34,7 +37,7 @@ function IngresoData() {
             <div className={style.Sur}>{data.detalle || "detalle"} </div>
           </div>
           <div className={data.check === true ? style.incom : style.egress}>
-            $ {data.añadirIngresoEgreso}
+          $ {formatNumber(data.añadirIngresoEgreso)}
           </div>
         </div>
       ))}

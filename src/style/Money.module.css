@@ -41,7 +41,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 10px;
-  font-size: 25px;
+  font-size: 15px;
   background-color: rgba(128, 128, 128, 0.39);
 }
 
@@ -160,5 +160,11 @@ p {
   flex-direction: column;
   justify-content: center;
   gap: 2px;
+}
+
+.btn{
+  background: #FF3465;
+  border: none;
+  
 }
 

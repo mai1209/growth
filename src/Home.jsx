@@ -5,6 +5,10 @@ import IngresoData from "./IngresoData";
 import PropTypes from 'prop-types';
 import Money from "./Money";
 
+
+
+
+
 function Home({isChecked }) {
   return (
     <>
@@ -14,10 +18,12 @@ function Home({isChecked }) {
         </h1>
         <img className={style.settingIcon} src={logo} alt="icon-setting" />
       </div>
-      <Money ></Money>
+     <Money></Money>
       <IngresoData  isChecked={isChecked}></IngresoData>
       <Footer></Footer>
+      
     </>
+    
   );
 }
 Home.propTypes = {
