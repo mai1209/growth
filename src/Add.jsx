@@ -52,9 +52,7 @@ function Add() {
     setFormDataList(newDataList); //restablecer la lista de datos
   };
 
-  
-
-//mostrar un error cuando se clickean los dos checkbox
+  //mostrar un error cuando se clickean los dos checkbox
   const showError = () => {
     if (formData.check && formData.check2 === true) {
       return (
@@ -64,6 +62,19 @@ function Add() {
       return "";
     }
   };
+
+  //fecha
+  const fechaHoy = new Date();
+  const año = fechaHoy.getFullYear();
+  const mes = fechaHoy.getMonth() + 1;
+  const dia = fechaHoy.getDate();
+
+  if (formData.fecha === "") {
+    setFormData(prevState => ({
+      ...prevState,
+      fecha: `${dia}/${mes}/${año}`
+    }));
+  }
 
   return (
     <div className={style.containerAdd}>
@@ -117,11 +128,11 @@ function Add() {
           <label htmlFor="fecha">Modificar Fecha </label>
 
           <input
-             name="fecha"
-             type="date"
-             value={formData.fecha}
-             onChange={handleChange}
-            
+            name="fecha"
+            type="text"
+            placeholder={`${dia}/${mes}/${año}`}
+            value={formData.fecha}
+            onChange={handleChange}
           />
         </div>
         <div className={`${style.label} ${style.check}`}>
@@ -144,7 +155,6 @@ function Add() {
               onChange={handleChange}
             />
           </label>
-       
         </div>
         {showError()}
         <Link className={style.link} to="/" onClick={handleSubmit}>

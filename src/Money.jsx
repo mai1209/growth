@@ -9,10 +9,6 @@ function Money() {
     setIsClicked(!isClicked);
   };
 
-
-
-
-
   const myNumbers = JSON.parse(localStorage.getItem("formDataList")) || [];
   //para los ingresos
   const filteredValues = myNumbers.filter(num => num.check === true);

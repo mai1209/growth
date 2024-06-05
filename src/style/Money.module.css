@@ -72,7 +72,9 @@ p {
   align-items: center;
   margin: 10px;
   font-weight: 100;
-  padding: 0 5px;
+  padding: 5px;
+
+  
 }
 
 .Def {
@@ -91,6 +93,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+ 
   
   
 }
@@ -99,6 +103,12 @@ p {
   background-color: #35725f;
   border-radius: 30px;
   padding: 5px;
+  width: 85px;
+  text-align: center;
+  
+
+
+ 
 }
 
 .containerDate {
@@ -147,12 +157,16 @@ p {
 
 .incom{
   color: #50FF34;
-  font-size: 20px ;
+  font-size: 15px ;
+  width: 110px;
+  text-align: center;
 }
 
 .egress{
   color: #FF0000;
-  font-size: 20px ;
+  font-size: 15px ;
+  width: 110px;
+  text-align: center;
 }
 
 .yearDate{
@@ -168,3 +182,15 @@ p {
   
 }
 
+.btnDelete{
+  background: none;
+  border: none;
+  padding-right: 10px;
+  cursor: pointer;
+
+}
+
+.btnDeleteIcon:hover{
+  fill: #FF3465;
+
+}

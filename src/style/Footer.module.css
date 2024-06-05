@@ -28,7 +28,7 @@
 }
 
 .settingIcon:hover {
-  fill: crimson;
+  fill: #FF3465;
 }
 
 @media (min-width: 600px) {
