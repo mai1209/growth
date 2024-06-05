@@ -14,7 +14,6 @@ function Money() {
 
 
   const myNumbers = JSON.parse(localStorage.getItem("formDataList")) || [];
-
   //para los ingresos
   const filteredValues = myNumbers.filter(num => num.check === true);
   const Ingresos = filteredValues.map(num => Number(num.añadirIngresoEgreso)); // Convertir a número
@@ -63,7 +62,7 @@ const formatNumber = (number) => {
         </button>
       </div>
       <div className={style.containerPrice}>
-        <p className={style.price}> {isClicked ? "????" :"💷  "} </p>
+        <p className={style.price}> {isClicked ? "❔❔❔" :"💲💲💲"} </p>
       </div>
       
       <div className={style.containerTitles}>

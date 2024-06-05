@@ -121,6 +121,7 @@ function Add() {
              type="date"
              value={formData.fecha}
              onChange={handleChange}
+            
           />
         </div>
         <div className={`${style.label} ${style.check}`}>
@@ -143,6 +144,7 @@ function Add() {
               onChange={handleChange}
             />
           </label>
+       
         </div>
         {showError()}
         <Link className={style.link} to="/" onClick={handleSubmit}>
