@@ -52,10 +52,13 @@ function IngresoData() {
 
 
   const eliminarItem = (index) => {
-    const newDataList = [...dataList];
-    newDataList.splice(index, 1); // Elimina el elemento en el índice dado
-    localStorage.setItem("formDataList", JSON.stringify(newDataList)); // Actualiza el almacenamiento local
-    setDataList(newDataList); // Actualiza el estado
+    const confirmarEliminar = window.confirm("¿Estás seguro de que deseas eliminar este elemento?");
+    if (confirmarEliminar) {
+      const newDataList = [...dataList];
+      newDataList.splice(index, 1); // Elimina el elemento en el índice dado
+      localStorage.setItem("formDataList", JSON.stringify(newDataList)); // Actualiza el almacenamiento local
+      setDataList(newDataList); // Actualiza el estado
+    }
   };
 
  
