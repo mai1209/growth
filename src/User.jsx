@@ -1,6 +1,6 @@
 import Style from "./style/User.module.css";
 import Footer from "./Footer";
-import user from "./assets/person_20dp_FILL0_wght400_GRAD0_opsz20 (1).svg"
+import user from "./assets/IMG-20240611-WA0030-fotor-20240611145935.png"  
 import Nav from "./Nav";
  
 function User() {

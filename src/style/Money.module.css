@@ -179,9 +179,15 @@ p {
 }
 
 .btn{
-  background: #FF3465;
+  background:none;
   border: none;
+ 
   
+}
+
+.btn svg{
+  
+  background: #FF3465;
 }
 
 .btnDelete{
