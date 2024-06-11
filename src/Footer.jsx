@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import style from "./style/Footer.module.css";
-
+import { useState} from "react";
 const Footer = () => {
+
+  const [activeIcon, setActiveIcon] = useState("home");
+
+
   return (
     <>
       <div className={style.containerFooter}>
-        <div className={style.containerIcon}>
+        <div className={`${style.containerIcon} ${activeIcon === "home" ? style.active : ""}`}
+        onClick={() => setActiveIcon("home")}>
           <Link to="/">
             <svg
               className={style.settingIcon}
@@ -21,7 +26,8 @@ const Footer = () => {
 
           <p className={style.titleIcon}>Home</p>
         </div>
-        <div className={style.containerIcon}>
+        <div className={`${style.containerIcon} ${activeIcon === "user" ? style.active : ""}`}
+        onClick={() => setActiveIcon("user")}>
           <Link to="/user">
             <svg
               className={style.settingIcon}
@@ -37,7 +43,8 @@ const Footer = () => {
 
           <p className={style.titleIcon}>User</p>
         </div>
-        <div className={style.containerIcon}>
+        <div className={`${style.containerIcon} ${activeIcon === "categories" ? style.active : ""}`}
+        onClick={() => setActiveIcon("categories")}>
           <svg
             className={style.settingIcon}
             xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +57,8 @@ const Footer = () => {
           </svg>
           <p className={style.titleIcon}>Categories</p>
         </div>
-        <div className={style.containerIcon}>
+        <div className={`${style.containerIcon} ${activeIcon === "add" ? style.active : ""}`}
+        onClick={() => setActiveIcon("add")}>
           <Link to="/add">
             <svg
               className={style.settingIcon}
