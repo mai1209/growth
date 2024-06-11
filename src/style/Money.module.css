@@ -205,3 +205,9 @@ p {
   fill: #FF0000;
 
 }
+
+
+.scrollContainer {
+  max-height: calc(100vh - 360px);
+  overflow-y: auto;
+}

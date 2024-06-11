@@ -1,11 +1,31 @@
 import { Link } from "react-router-dom";
 import style from "./style/Footer.module.css";
-import { useState} from "react";
+import{ useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const Footer = () => {
 
-  const [activeIcon, setActiveIcon] = useState("home");
+  const location = useLocation();
+  const [activeIcon, setActiveIcon] = useState("");
 
-
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/":
+        setActiveIcon("home");
+        break;
+      case "/user":
+        setActiveIcon("user");
+        break;
+      case "/categories":
+        setActiveIcon("categories");
+        break;
+      case "/add":
+        setActiveIcon("add");
+        break;
+      default:
+        setActiveIcon("");
+        break;
+    }
+  }, [location.pathname]);
   return (
     <>
       <div className={style.containerFooter}>
@@ -15,7 +35,7 @@ const Footer = () => {
             <svg
               className={style.settingIcon}
               xmlns="http://www.w3.org/2000/svg"
-              height="24px"
+              height="20px"
               viewBox="0 -960 960 960"
               width="24px"
               fill="#5f6368"

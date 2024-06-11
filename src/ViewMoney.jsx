@@ -10,6 +10,7 @@ function ViewMoney() {
 
   return (
     <>
+  
       <div className={style.containerMoney}>
         <p className={style.p}>Su dinero</p>
         <button className={style.btn} onClick={handleClick}>

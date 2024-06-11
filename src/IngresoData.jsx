@@ -64,7 +64,7 @@ function IngresoData() {
 
  
   return (
-    <div>
+    <div  className={style.scrollContainer}>
       {dataList.slice().reverse().map((data, index) =>  (
         <div key={index} className={style.containerDescription}>
           <div className={style.containerDate}>

@@ -1,14 +1,14 @@
 .containerFooter {
  
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+ border-radius: 4px;
   display: flex;
   justify-content: space-around;
   height: 70px;
+  padding: 5px 0;
 }
 
 .containerIcon {
@@ -24,13 +24,11 @@
   margin: 0;
 }
 
+
 .settingIcon {
-  cursor: pointer;
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
 }
-
-
 
 
 .active .settingIcon,
