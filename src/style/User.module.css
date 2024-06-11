@@ -8,7 +8,7 @@
   margin: 40px 0  5px;
   display: flex;
   justify-content: center;
-  padding-top: 68px;
+ padding-top: 42px;
   height: 65vh;
 
 }
@@ -29,7 +29,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 47px;
+  top: 44px;
   height: 98px;
   width: 98px;
   border-radius: 50%;
