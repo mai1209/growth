@@ -1,20 +1,26 @@
 
-
+.body  {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
 
 .container {
   color: #ffffff;
   background-color: #1e1e1e;
   display: flex;
   flex-direction: column;
-  margin-top: 8%;
-  padding-top: 60px;
-  
+  margin: 5px;
+  display: flex;
+  justify-content: flex-end;
+  height: 80vh;
 
 }
 
 .container h2 {
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .title {
@@ -24,14 +30,18 @@
 
 .imgUser {
   position: fixed;
-  left: 38%;
-  top: 5%;
-  height: 100px;
-  width: 100px;
+  left: 50%;
+  top: 60px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   border: 1px solid red;
-  
+  justify-self: center;
+  transform: translate(-50%, -50%);
+
 }
+
+
 
 form input {
   color: #ffffff;
@@ -59,7 +69,7 @@ form {
   width: 100%;
   justify-content: center;
   gap: 30px;
-  padding: 10px;
+ padding-bottom: 5px;
  
 }
 
@@ -69,7 +79,7 @@ form {
   border-radius: 18px;
   border: 1px solid #ff34637c;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   width: 100px;
   letter-spacing: 1px;
