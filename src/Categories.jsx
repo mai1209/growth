@@ -26,7 +26,21 @@ function Categorie({ onSelectCategory }) {
       <option value="alimentos">Alimentos</option>
       <option value="transporte">Transporte</option>
       <option value="entretenimiento">Entretenimiento</option>
-      <option value="facturas">Facturas</option>
+      <option value="Servicios Publicos">Servicios Publicos</option>
+      <option value="Alquiler o hipoteca">Alquiler o hipoteca</option>
+      <option value="Mantenimiento del hogar">Mantenimiento del hogar</option>
+      <option value="Seguro de vivienda">Seguro de vivienda</option>
+      <option value="Combustible">Combustible</option>
+      <option value="Estacionamiento y peajes">Estacionamiento y peajes</option>
+      <option value="Medicamentos">Medicamentos</option>
+      <option value="Seguro médico">Seguro médico</option>
+      <option value="Salud">Salud</option>
+      <option value="Educación">Educación</option>
+      <option value="Deudas y Finanzas">Deudas y Finanzas</option>
+      <option value="Ropa y Accesorios">Ropa y Accesorios</option>
+      <option value="Viajes y Vacaciones">Viajes y Vacaciones</option>
+      <option value="Ahorros e Inversiones">Ahorros e Inversiones</option>
+      <option value="Otro">Otro</option>
     </select>
 
   </div>

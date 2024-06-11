@@ -158,14 +158,16 @@ p {
 .incom{
   color: #50FF34;
   font-size: 15px ;
-  width: 110px;
+  min-width: 110px;
+  max-width: fit-content;
   text-align: center;
 }
 
 .egress{
   color: #FF0000;
   font-size: 15px ;
-  width: 110px;
+  min-width: 110px;
+  max-width: fit-content;
   text-align: center;
 }
 
@@ -191,6 +193,6 @@ p {
 }
 
 .btnDeleteIcon:hover{
-  fill: #FF3465;
+  fill: #FF0000;
 
 }
