@@ -13,17 +13,23 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 23px 26px 0  26px;
   }
   
   .logo{
-    font-size: 15px;
-    color:white;
+    width: 60.33px;
+    height:8.3px  ;
+    color: #F5F5F5;
     cursor: pointer;
+ 
   }
+
   
   .settingIcon{
     cursor: pointer;
+    background: none;
+    border: none;
+  
   }
   
   span{
@@ -31,17 +37,4 @@ body{
   }
   
   
-  @media (min-width: 600px)  {
-    .logo{
-      font-size: 20px;
-     
-    }
-    
-    .settingIcon{
-      width: 35px;
-      height: 35px;
-    }
-    
-  }
-  
-  
+ 

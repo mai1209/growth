@@ -3,8 +3,9 @@ import style from "./style/Add.module.css";
 import PropTypes from "prop-types";
 
 
+
 function Categorie({ onSelectCategory }) {
-   // const [selectedOption, setSelectedOption] = useState("");
+ 
     const [selectedCategory, setSelectedCategory] = useState("");
   
   const handleCategoryChange = (e) => {
@@ -12,7 +13,8 @@ function Categorie({ onSelectCategory }) {
     setSelectedCategory(category);
     onSelectCategory(category); // Llama a la función para manejar la selección en Add
   };
-
+  
+  
   return (
     <div>
     <select

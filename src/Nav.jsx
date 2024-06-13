@@ -1,15 +1,24 @@
 import style from "./style/App.module.css";
-import logo from "./assets/settings_24dp.svg";
+import img from "./assets/LOGO TEXT.png"
 
 function Nav() {
   return (
     <div className={style.containerNav}>
-        <h1 className={style.logo}>
-          GROWTH <span>.</span>
-        </h1>
-        <img className={style.settingIcon} src={logo} alt="icon-setting" />
-      </div>
-  )
+      <img className={style.logo} src={img} alt="logo" />
+
+      <button className={style.settingIcon}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="30px"
+          viewBox="0 -960 960 960"
+          width="30px"
+          fill="#FFFFFF"
+        >
+          <path d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z" />
+        </svg>
+      </button>
+    </div>
+  );
 }
 
-export default Nav
+export default Nav;
