@@ -1,6 +1,7 @@
 import style from "./style/App.module.css";
 import img from "./assets/LOGO TEXT.png"
 
+
 function Nav() {
   return (
     <div className={style.containerNav}>

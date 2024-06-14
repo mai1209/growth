@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Categorie from "./Categories";
 
+import img from "./assets/LOGO TEXT.png";
+
 function Add() {
   const initialFormData = {
     categoria: "",
@@ -16,6 +18,19 @@ function Add() {
 
   const [formData, setFormData] = useState(initialFormData);
   const [formDataList, setFormDataList] = useState([]);
+
+  const [isIncomeSelected, setIsIncomeSelected] = useState(true);
+  const [isExpenseSelected, setIsExpenseSelected] = useState(false);
+
+  const toggleIncome = () => {
+    setIsIncomeSelected(true);
+    setIsExpenseSelected(false);
+  };
+
+  const toggleExpense = () => {
+    setIsIncomeSelected(false);
+    setIsExpenseSelected(true);
+  };
 
   useEffect(() => {
     const storedDataList =
@@ -52,17 +67,6 @@ function Add() {
     setFormDataList(newDataList); //restablecer la lista de datos
   };
 
-  //mostrar un error cuando se clickean los dos checkbox
-  const showError = () => {
-    if (formData.check && formData.check2 === true) {
-      return (
-        <div className="error-message">Only one checkbox can be selected</div>
-      );
-    } else {
-      return "";
-    }
-  };
-
   //fecha
   const fechaHoy = new Date();
   const año = fechaHoy.getFullYear();
@@ -70,26 +74,20 @@ function Add() {
   const dia = fechaHoy.getDate();
 
   if (formData.fecha === "") {
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      fecha: `${dia}/${mes}/${año}`
+      fecha: `${dia}/${mes}/${año}`,
     }));
   }
 
   return (
+
+    <>
+    <img className={style.logo} src={img} alt="logo" />
     <div className={style.containerAdd}>
+      
       <form onSubmit={handleSubmit} className={style.containerFormAdd}>
-        <Link to="/" className={style.close}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#ff3465"
-          >
-            <path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-          </svg>
-        </Link>
+        <div className={style.containerNav}></div>
         <div className={style.Date}>
           <p>Tuesday</p>
           <p>21/05/2024</p>
@@ -116,6 +114,7 @@ function Add() {
         <div className={style.label}>
           <label htmlFor="detalle">Añadir Detalle</label>
           <input
+            className={style.numero}
             name="detalle"
             type="text"
             placeholder="Detalle"
@@ -128,6 +127,7 @@ function Add() {
           <label htmlFor="fecha">Modificar Fecha </label>
 
           <input
+            className={style.numero}
             name="fecha"
             type="text"
             placeholder={`${dia}/${mes}/${año}`}
@@ -135,35 +135,59 @@ function Add() {
             onChange={handleChange}
           />
         </div>
-        <div className={`${style.label} ${style.check}`}>
-          <label className={style.checkbox}>
-            Add Income
-            <input
-              name="check"
-              type="checkbox"
-              checked={formData.check} // Utilizamos el estado del checkbox del formulario
-              onChange={handleChange}
-            />
-          </label>
 
-          <label className={style.checkbox}>
-            Add Egress{" "}
-            <input
-              name="check2"
-              type="checkbox"
-              checked={formData.check2} // Utilizamos el estado del checkbox del formulario
-              onChange={handleChange}
-            />
-          </label>
+        <div className={`${style.check} ${style.display}`}>
+          <p className={style.checkbox} onClick={toggleIncome}>
+            Ingreso
+          </p>
+          {isIncomeSelected && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="116px"
+              viewBox="0 -960 960 960"
+              width="116px"
+              fill="#FF3465"
+            >
+              <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-60h400q75 0 127.5-52.5T860-480q0-75-52.5-127.5T680-660H280q-75 0-127.5 52.5T100-480q0 75 52.5 127.5T280-300Zm-1.06-79q42.06 0 71.56-29.44t29.5-71.5q0-42.06-29.44-71.56t-71.5-29.5q-42.06 0-71.56 29.44t-29.5 71.5q0 42.06 29.44 71.56t71.5 29.5ZM480-480Z" />
+            </svg>
+          )}
+
+          {isExpenseSelected && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="116px"
+              viewBox="0 -960 960 960"
+              width="116px"
+              fill="#FF3465"
+            >
+              <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-60h400q75 0 127.5-52.5T860-480q0-75-52.5-127.5T680-660H280q-75 0-127.5 52.5T100-480q0 75 52.5 127.5T280-300Zm400.94-79q42.06 0 71.56-29.44t29.5-71.5q0-42.06-29.44-71.56t-71.5-29.5q-42.06 0-71.56 29.44t-29.5 71.5q0 42.06 29.44 71.56t71.5 29.5ZM480-480Z" />
+            </svg>
+          )}
+          <p className={style.checkbox} onClick={toggleExpense}>
+            Egreso
+          </p>
         </div>
-        {showError()}
-        <Link className={style.link} to="/" onClick={handleSubmit}>
-          <div className={style.btn}>
-            <button type="button"> Add</button>
+        <div className={style.containerBtn}>
+           <div className={style.Btn12}>
+          <div className={style.cancelar}>
+            <button type="button"> Cancelar</button>
           </div>
-        </Link>
+          <Link className={style.link} to="/" onClick={handleSubmit}>
+            <div className={style.añadir}>
+              <button type="button"> Añadir</button>
+            </div>
+          </Link>
+        </div>
+
+        <button className={style.eliminar}>Eliminar</button>
+        </div>
+       
       </form>
     </div>
+    
+    
+    </>
+    
   );
 }
 Add.propTypes = {

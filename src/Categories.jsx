@@ -16,14 +16,15 @@ function Categorie({ onSelectCategory }) {
   
   
   return (
-    <div>
+    <div className={style.containerCategory} >
     <select
       className={style.select}
       name="dropdown"
       id="dropdown"
-      value={selectedCategory}
+      value={selectedCategory  }
     onChange={handleCategoryChange}
     >
+       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FF3465"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
       <option  value="">Seleccionar una opcion</option>
       <option value="alimentos">Alimentos</option>
       <option value="transporte">Transporte</option>
@@ -44,7 +45,7 @@ function Categorie({ onSelectCategory }) {
       <option value="Ahorros e Inversiones">Ahorros e Inversiones</option>
       <option value="Otro">Otro</option>
     </select>
-
+   
   </div>
   )
 }
