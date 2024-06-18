@@ -1,8 +1,46 @@
 import style from "./style/Money.module.css";
 import { useState, useEffect } from "react";
-import { FaShoppingCart, FaGasPump , FaBus} from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaGasPump,
+  FaBus,
+  FaWalking,
+  FaBriefcaseMedical,
+  FaHome,
+  FaCar,
+  FaSchool,
+  FaChartPie,
+  FaBalanceScale,
+  FaShoppingBag,
+} from "react-icons/fa";
+import { IoAirplane } from "react-icons/io5";
+import { MdElectricalServices } from "react-icons/md";
 
 function IngresoData() {
+
+  // Definir un objeto para mapear categorías a iconos
+  const categoryIcons = {
+    alimentos: <FaShoppingCart />,
+    transporte: <FaBus />,
+    entretenimiento: <FaWalking />,
+    "Servicios Publicos": <MdElectricalServices />,
+    "Alquiler o hipoteca": <FaHome />,
+    "Mantenimiento del hogar": <FaHome />,
+    "Seguro de vivienda": <FaHome />,
+    Combustible: <FaGasPump />,
+    "Estacionamiento y peajes": <FaCar />,
+    Medicamentos: <FaBriefcaseMedical />,
+    "Seguro médico": <FaBriefcaseMedical />,
+    Salud: <FaBriefcaseMedical />,
+    Educación: <FaSchool />,
+    "Deudas y Finanzas": <FaChartPie />,
+    "Ropa y Accesorios": <FaShoppingBag />,
+    "Viajes y Vacaciones": <IoAirplane />,
+    "Ahorros e Inversiones": <FaBalanceScale />,
+    Otro: <FaBalanceScale />,
+  };
+
+
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
@@ -31,13 +69,13 @@ function IngresoData() {
     };
   };
 
-  const categoryIcons = {
-    alimentos: <FaShoppingCart />,
-    transporte: <FaBus />,
-    Combustible: <FaGasPump />,
+ // const categoryIcons = {
+  //  alimentos: <FaShoppingCart />,
+   // transporte: <FaBus />,
+   // Combustible: <FaGasPump />,
 
     // Agrega más categorías e iconos según tu necesidad
-  };
+  //};
 
   const eliminarItem = (index) => {
     const confirmarEliminar = window.confirm(
@@ -77,7 +115,7 @@ function IngresoData() {
                 <span className={style.categoryText}>
                   {data.categoria || "Categoría"}
                 </span>
-                {categoryIcons[data.categoria] || (
+                {categoryIcons[data.categoria]  || (
                   <span className={style.defaultIcon}>Icono</span>
                 )}
                 

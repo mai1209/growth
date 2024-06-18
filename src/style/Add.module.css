@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 .logo {
   width: 60.33px;
@@ -9,16 +8,12 @@
   padding: 26px;
 }
 
-
-
 .Date {
-  color: #FF3465;
+  color: #ff3465;
   font-size: 16px;
   display: flex;
   justify-content: center;
   font-family: "Inter", sans-serif;
- 
-  
 }
 
 .label {
@@ -26,30 +21,23 @@
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  color: #FFFFFf;
+  color: #ffffff;
   font-size: 16px;
-  font-family: "Inter", sans-serif; 
+  font-family: "Inter", sans-serif;
   font-weight: 100;
 }
 
-.numero{
-  border: 1px solid #FF3465;
+.numero {
+  border: 1px solid #ff3465;
   height: 50px;
   border-radius: 16px;
   margin-top: 8px;
   background: none;
- 
- 
 }
 
-
-
-
-
-
-.numero::placeholder{
+.numero::placeholder {
   text-align: center;
-  color: #FFFFFf;
+  color: #ffffff;
   font-style: italic;
   font-size: 16px;
   font-family: "Inter", sans-serif;
@@ -60,105 +48,102 @@
   text-decoration: none;
 }
 
-.checkbox{
-    font-size: 16px;
+.checkbox {
+  font-size: 16px;
   font-family: "Inter", sans-serif;
-  color: #FFFFFf;
-
-
-
+  color: #ffffff;
 }
 
-.display{
+.display {
   display: flex;
-justify-content: center;
- gap: 30px;
+  justify-content: center;
+  gap: 30px;
   align-items: center;
-
 }
 
 label input {
   display: none;
 }
-.containerBtn{
+.containerBtn {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 20px;
 }
-.Btn12{
+.Btn12 {
   display: flex;
   justify-content: space-between;
- 
-
-
- 
 }
 
-.cancelar{
+.cancelar {
   width: 171px;
   height: 56px;
-  background-color: #FF3465;
+  background-color: #ff3465;
   border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-.añadir{
+.añadir {
   width: 171px;
   height: 56px;
   background-color: none;
   border-radius: 16px;
-  border: 1px solid #FF3465 ;
+  border: 1px solid #ff3465;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.añadir button{
+.añadir button {
   background: none;
   border: none;
-  color:#FF3465;
+  color: #ff3465;
   font-size: 16px;
   font-weight: bold;
-
 }
 
-.cancelar button{
+.cancelar button {
   background: none;
   border: none;
-  color:#0B0E10 ;
+  color: #0b0e10;
   font-size: 16px;
   font-weight: bold;
-  
 }
 
-.eliminar{
- 
+.eliminar {
   height: 56px;
   background-color: none;
   border-radius: 16px;
-  border: 1px solid #FF3465 ;
+  border: 1px solid #ff3465;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(346, 100%, 60%, 0.308); 
-   color:#0B0E10 ;
+  background-color: hsla(346, 100%, 60%, 0.308);
+  color: #0b0e10;
   font-size: 16px;
   font-weight: bold;
   font-family: "Inter", sans-serif;
-
 }
 
-.icon{
-  color: #FF3465;
+.icon {
+  color: #ff3465;
 }
 
-.inputAdd{
+.inputAdd {
   display: none;
 }
 
+.iconFa {
+  color: #ffffff;
+align-items: center;
+}
+
+.inputIconLabel{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
