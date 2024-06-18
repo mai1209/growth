@@ -39,6 +39,7 @@
   margin-top: 8px;
   background: none;
  
+ 
 }
 
 .select {
@@ -165,3 +166,10 @@ label input {
 
 }
 
+.icon{
+  color: #FF3465;
+}
+
+.inputAdd{
+  display: none;
+}

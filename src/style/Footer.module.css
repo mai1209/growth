@@ -15,13 +15,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 
 
-.settingIcon {
-  width: 30px;
-  height: 30px;
+.settingIcon  {
+
+  color: #5E5859;
 }
 
 

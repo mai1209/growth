@@ -3,25 +3,17 @@ import style from "./style/Add.module.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Categorie from "./Categories";
+import { BsToggleOn, BsToggleOff } from "react-icons/bs";
 
 import img from "./assets/LOGO TEXT.png";
 
 function Add() {
-
-
-
-
-
-
-
-
-
   const initialFormData = {
     categoria: "",
     añadirIngresoEgreso: "",
     detalle: "",
     fecha: "",
-    check: false,
+    check: true,
     check2: false,
   };
 
@@ -31,21 +23,35 @@ function Add() {
   const [isIncomeSelected, setIsIncomeSelected] = useState(true);
   const [isExpenseSelected, setIsExpenseSelected] = useState(false);
 
+//cambia el toggle de ingreso y egreso en seleccionado y no seleccionado
   const toggleIncome = () => {
-    setIsIncomeSelected(!isIncomeSelected);
+    setIsIncomeSelected(true);
     setIsExpenseSelected(false);
+    setFormData((prevState) => ({
+      ...prevState,
+      check: true,
+      check2: false,
+    }));
   };
 
   const toggleExpense = () => {
-    setIsExpenseSelected(!isExpenseSelected);
     setIsIncomeSelected(false);
+    setIsExpenseSelected(true);
+    setFormData((prevState) => ({
+      ...prevState,
+      check: false,
+      check2: true,
+    }));
   };
+
+  //se guarda en el storage
   useEffect(() => {
     const storedDataList =
       JSON.parse(localStorage.getItem("formDataList")) || [];
     setFormDataList(storedDataList);
   }, []);
 
+  //maneja los estados del checkbox
   const handleChange = (e) => {
     //guardar el estado del checkbox
     const { name, value, type, checked } = e.target;
@@ -77,6 +83,7 @@ function Add() {
 
   //fecha
   const fechaHoy = new Date();
+
   const año = fechaHoy.getFullYear();
   const mes = fechaHoy.getMonth() + 1;
   const dia = fechaHoy.getDate();
@@ -88,16 +95,22 @@ function Add() {
     }));
   }
 
-    //mostrar un error cuando se clickean los dos checkbox
-    const showError = () => {
-      if (formData.check && formData.check2 === true) {
-        return (
-          <div className="error-message">Only one checkbox can be selected</div>
-        );
-      } else {
-        return "";
-      }
-    };
+  const getTodayDate = () => {
+    const today = new Date();
+    const options = { weekday: 'long' };
+    return today.toLocaleDateString('es-ES', options);
+  };
+
+  //mostrar un error cuando se clickean los dos checkbox
+  const showError = () => {
+    if (formData.check && formData.check2 === true) {
+      return (
+        <div className="error-message">Only one checkbox can be selected</div>
+      );
+    } else {
+      return "";
+    }
+  };
 
   return (
     <>
@@ -106,8 +119,8 @@ function Add() {
         <form onSubmit={handleSubmit} className={style.containerFormAdd}>
           <div className={style.containerNav}></div>
           <div className={style.Date}>
-            <p>Tuesday</p>
-            <p>21/05/2024</p>
+          <p> {getTodayDate()} </p>
+            <p>{`${dia}/${mes}/${año}`}</p>
           </div>
 
           <div className={style.label}>
@@ -130,7 +143,7 @@ function Add() {
           </div>
           <div className={style.label}>
             <label htmlFor="detalle">Añadir Detalle</label>
-            <input
+            <input 
               className={style.numero}
               name="detalle"
               type="text"
@@ -157,45 +170,29 @@ function Add() {
             <p className={style.checkbox} onClick={toggleIncome}>
               Ingreso
             </p>
-            <input
-  name="check"
-  type="checkbox"
-  checked={formData.check}
-  onChange={toggleIncome}
-/>
-          
+            <input className={style.inputAdd}
+              name="check"
+              type="checkbox"
+              checked={formData.check}
+              onChange={toggleIncome}
+            />
+
             {isIncomeSelected && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="116px"
-                viewBox="0 -960 960 960"
-                width="116px"
-                fill="#FF3465"
-              >
-                <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-60h400q75 0 127.5-52.5T860-480q0-75-52.5-127.5T680-660H280q-75 0-127.5 52.5T100-480q0 75 52.5 127.5T280-300Zm-1.06-79q42.06 0 71.56-29.44t29.5-71.5q0-42.06-29.44-71.56t-71.5-29.5q-42.06 0-71.56 29.44t-29.5 71.5q0 42.06 29.44 71.56t71.5 29.5ZM480-480Z" />
-              </svg>
+             <BsToggleOff size={116} className={style.icon} />
             )}
 
             {isExpenseSelected && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="116px"
-                viewBox="0 -960 960 960"
-                width="116px"
-                fill="#FF3465"
-              >
-                <path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70h400q100 0 170 70t70 170q0 100-70 170t-170 70H280Zm0-60h400q75 0 127.5-52.5T860-480q0-75-52.5-127.5T680-660H280q-75 0-127.5 52.5T100-480q0 75 52.5 127.5T280-300Zm400.94-79q42.06 0 71.56-29.44t29.5-71.5q0-42.06-29.44-71.56t-71.5-29.5q-42.06 0-71.56 29.44t-29.5 71.5q0 42.06 29.44 71.56t71.5 29.5ZM480-480Z" />
-              </svg>
+              <BsToggleOn size={116} className={style.icon} /> 
             )}
             <p className={style.checkbox} onClick={toggleExpense}>
               Egreso
             </p>
-            <input
-  name="check2"
-  type="checkbox"
-  checked={formData.check2}
-  onChange={toggleExpense}
-/>
+            <input className={style.inputAdd}
+              name="check2"
+              type="checkbox"
+              checked={formData.check2}
+              onChange={toggleExpense}
+            />
           </div>
           {showError()}
           <div className={style.containerBtn}>
@@ -211,8 +208,6 @@ function Add() {
                 </div>
               </Link>
             </div>
-
-            <button className={style.eliminar}>Eliminar</button>
           </div>
         </form>
       </div>
@@ -222,6 +217,5 @@ function Add() {
 Add.propTypes = {
   isChecked: PropTypes.bool,
   onCheckboxChange: PropTypes.bool,
-  
 };
 export default Add;
