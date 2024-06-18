@@ -25,6 +25,7 @@
   font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 100;
+  
 }
 
 .numero {
@@ -33,6 +34,11 @@
   border-radius: 16px;
   margin-top: 8px;
   background: none;
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
 }
 
 .numero::placeholder {
@@ -138,7 +144,13 @@ label input {
 
 .iconFa {
   color: #ffffff;
-align-items: center;
+  align-items: center;
+}
+
+.divFa{
+  display: flex;
+  justify-content: center;
+  background-color: red;
 }
 
 .inputIconLabel{

@@ -69,13 +69,7 @@ function IngresoData() {
     };
   };
 
- // const categoryIcons = {
-  //  alimentos: <FaShoppingCart />,
-   // transporte: <FaBus />,
-   // Combustible: <FaGasPump />,
 
-    // Agrega más categorías e iconos según tu necesidad
-  //};
 
   const eliminarItem = (index) => {
     const confirmarEliminar = window.confirm(

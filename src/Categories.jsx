@@ -15,17 +15,9 @@ import {
   FaShoppingBag,
 } from "react-icons/fa";
 import { IoAirplane } from "react-icons/io5";
-import { MdElectricalServices } from "react-icons/md";
+import { MdElectricalServices} from "react-icons/md";
 
 function Categorie({ onSelectCategory }) {
-  //   const [selectedCategory, setSelectedCategory] = useState("");
-
-  //  const handleCategoryChange = (e) => {
-  //  const category = e.target.value;
-  //setSelectedCategory(category);
-  //onSelectCategory(category); // Llama a la función para manejar la selección en Add
-  //};
-
   const options = [
     {
       value: "alimentos",
@@ -102,25 +94,27 @@ function Categorie({ onSelectCategory }) {
   const IconOption = (props) => {
     return (
       <components.Option {...props} className={style.divFa}>
-        {props.data.label}
-        {props.data.icon && (
-          <div className={style.iconFa}>{props.data.icon}</div>
-        )}
+        <div>{props.data.label}</div>
+        <div>
+          {props.data.icon && (
+            <div className={style.iconFa}>{props.data.icon}</div>
+          )}
+        </div>
       </components.Option>
     );
   };
 
-    // Mostrar los íconos en el valor seleccionado
-    const SingleValue = (props) => (
-      <components.SingleValue {...props} className={style.inputIconLabel}>
-        <div>{props.data.label} </div>
-         <div>
-           {props.data.icon && <span className={style.iconFa}>{props.data.icon}</span>}
-         </div>
-       
-       
-      </components.SingleValue>
-    );
+  // Mostrar los íconos en el valor seleccionado
+  const SingleValue = (props) => (
+    <components.SingleValue {...props} className={style.inputIconLabel}>
+      <div>{props.data.label} </div>
+      <div>
+        {props.data.icon && (
+          <span className={style.iconFa}>{props.data.icon}</span>
+        )}
+      </div>
+    </components.SingleValue>
+  );
   const customStyles = {
     control: (provided) => ({
       ...provided,
@@ -133,37 +127,37 @@ function Categorie({ onSelectCategory }) {
       },
       textAlign: "center", // Centra el texto del input
       color: "#FFFFFf",
-     
     }),
     singleValue: (provided) => ({
       ...provided,
       color: "#FFFFFf", // Cambia el color del texto del input
-      
     }),
     option: (provided) => ({
       ...provided,
       backgroundColor: "rgba(7, 7, 7,  0.863)",
       height: "100%",
+      maxWidth: "600px",
       color: "#FFFFFf",
-    
+      padding: " 20px 20px 2px 10px ",
       "&:hover": {
         backgroundColor: "rgba(255, 52, 99, 0.74)", // Fondo más claro al pasar el ratón
       },
       display: "flex",
-      justifyContent:"space-between",
-      padding: "5px 300px",
-     
+      justifyContent: "space-between",
+      margin:"auto"
+  
+
     }),
 
     menu: (provided) => ({
       ...provided,
       overflow: "auto",
       scrollbarWidth: "thin",
-      padding: "20px",
-      backgroundColor: "rgba(7, 7, 7, 0.863)",
+      backgroundColor: "rgba(7, 7, 7,  0.863)",
       border: "1px solid #FF3465",
       borderRadius: "16px",
     
+     
     }),
     menuList: (provided) => ({
       ...provided,
@@ -200,7 +194,7 @@ function Categorie({ onSelectCategory }) {
         onChange={handleChange}
         styles={customStyles}
         placeholder="Seleccionar una opción"
-        components={{ Option: IconOption,SingleValue}}
+        components={{ Option: IconOption, SingleValue }}
       ></Select>
     </div>
   );
