@@ -25,7 +25,6 @@
   font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 100;
-  
 }
 
 .numero {
@@ -54,17 +53,54 @@
   text-decoration: none;
 }
 
-.checkbox {
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  color: #ffffff;
-}
-
 .display {
   display: flex;
   justify-content: center;
-  gap: 30px;
   align-items: center;
+ margin: 25px;
+}
+.ingresoEgresoBtn {
+  display: flex;
+  align-items: center;
+  background-color: #ff3465;
+  color: #0b0e10;
+  border: 2px solid #ff3465;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  border-radius: 32px;
+  height: 56px;
+  width: 167px;
+}
+.ingresoEgresoBtn2 {
+  display: flex;
+  align-items: center;
+  background-color: #ff3465;
+  color: #0b0e10;
+  border: 2px solid #ff3465;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  border-radius: 32px;
+  height: 56px;
+  width: 167px;
+  display: none;
+}
+.checkbox {
+  height: 56px;
+  width: 87px;
+  background-color: #ffffff;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+.checkbox2 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
 }
 
 label input {
@@ -73,12 +109,17 @@ label input {
 .containerBtn {
   display: flex;
   flex-direction: column;
+ 
   width: 100%;
   gap: 20px;
 }
 .Btn12 {
   display: flex;
   justify-content: space-between;
+  max-width: 600px;
+  padding: 10px;
+  flex-wrap: wrap;
+ 
 }
 
 .cancelar {
@@ -134,10 +175,6 @@ label input {
   font-family: "Inter", sans-serif;
 }
 
-.icon {
-  color: #ff3465;
-}
-
 .inputAdd {
   display: none;
 }
@@ -147,15 +184,18 @@ label input {
   align-items: center;
 }
 
-.divFa{
+.divFa {
   display: flex;
   justify-content: center;
   background-color: red;
 }
 
-.inputIconLabel{
+.inputIconLabel {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
+}
+.containerFormAdd {
+  gap: 0;
 }

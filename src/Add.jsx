@@ -3,7 +3,6 @@ import style from "./style/Add.module.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Categorie from "./Categories";
-import { BsToggleOn, BsToggleOff } from "react-icons/bs";
 
 import img from "./assets/LOGO TEXT.png";
 
@@ -19,14 +18,11 @@ function Add() {
 
   const [formData, setFormData] = useState(initialFormData);
   const [formDataList, setFormDataList] = useState([]);
-
+  //cambia la imagen del btn del ingreso seleccinado o egreso seleccionado
   const [isIncomeSelected, setIsIncomeSelected] = useState(true);
-  const [isExpenseSelected, setIsExpenseSelected] = useState(false);
-
-//cambia el toggle de ingreso y egreso en seleccionado y no seleccionado
+  //cambia el toggle de ingreso y egreso en seleccionado y no seleccionado
   const toggleIncome = () => {
     setIsIncomeSelected(true);
-    setIsExpenseSelected(false);
     setFormData((prevState) => ({
       ...prevState,
       check: true,
@@ -36,7 +32,6 @@ function Add() {
 
   const toggleExpense = () => {
     setIsIncomeSelected(false);
-    setIsExpenseSelected(true);
     setFormData((prevState) => ({
       ...prevState,
       check: false,
@@ -97,8 +92,9 @@ function Add() {
 
   const getTodayDate = () => {
     const today = new Date();
-    const options = { weekday: 'long' };
-    return today.toLocaleDateString('es-ES', options);
+  const options = { weekday: "long" };
+  const dayName = today.toLocaleDateString("es-ES", options);
+  return dayName.charAt(0).toUpperCase() + dayName.slice(1);
   };
 
   //mostrar un error cuando se clickean los dos checkbox
@@ -119,14 +115,12 @@ function Add() {
         <form onSubmit={handleSubmit} className={style.containerFormAdd}>
           <div className={style.containerNav}></div>
           <div className={style.Date}>
-          <p> {getTodayDate()} </p>
+            <p> {getTodayDate()} </p>
             <p>{`${dia}/${mes}/${año}`}</p>
           </div>
 
           <div className={style.label}>
-            <label htmlFor="añadirIngresoEgreso">
-              Añadir Ingreso / Añadir Egreso
-            </label>
+            <label htmlFor="añadirIngresoEgreso">Añadir Ingreso/Egreso</label>
             <input
               className={style.numero}
               name="añadirIngresoEgreso"
@@ -137,13 +131,13 @@ function Add() {
             />
           </div>
           <div className={style.label}>
-            <label htmlFor="dropdown">Añadir Categoria:</label>
+            <label htmlFor="dropdown">Seleccionar Categoria:</label>
 
             <Categorie onSelectCategory={handleCategorySelection}></Categorie>
           </div>
           <div className={style.label}>
             <label htmlFor="detalle">Añadir Detalle</label>
-            <input 
+            <input
               className={style.numero}
               name="detalle"
               type="text"
@@ -154,7 +148,7 @@ function Add() {
           </div>
 
           <div className={style.label}>
-            <label htmlFor="fecha">Modificar Fecha </label>
+            <label htmlFor="fecha">Fecha </label>
 
             <input
               className={style.numero}
@@ -166,28 +160,45 @@ function Add() {
             />
           </div>
 
-          <div className={`${style.check} ${style.display}`}>
-            <p className={style.checkbox} onClick={toggleIncome}>
-              Ingreso
-            </p>
-            <input className={style.inputAdd}
+          <div className={style.display}>
+            <div className={style.ingresoEgresoBtn}>
+              <p
+                className={isIncomeSelected ? style.checkbox : style.checkbox2}
+                onClick={toggleIncome}
+              >
+                Ingreso
+              </p>
+              <p
+                className={!isIncomeSelected ? style.checkbox : style.checkbox2}
+                onClick={toggleExpense}
+              >
+                Egreso
+              </p>
+            </div>
+            <div className={style.ingresoEgresoBtn2}>
+              <p
+                className={!isIncomeSelected ? style.checkbox : style.checkbox2}
+                onClick={toggleIncome}
+              >
+                Ingreso
+              </p>
+              <p
+                className={isIncomeSelected ? style.checkbox : style.checkbox2}
+                onClick={toggleExpense}
+              >
+                Egreso
+              </p>
+            </div>
+
+            <input
+              className={style.inputAdd}
               name="check"
               type="checkbox"
               checked={formData.check}
               onChange={toggleIncome}
             />
-
-            {isIncomeSelected && (
-             <BsToggleOff size={116} className={style.icon} />
-            )}
-
-            {isExpenseSelected && (
-              <BsToggleOn size={116} className={style.icon} /> 
-            )}
-            <p className={style.checkbox} onClick={toggleExpense}>
-              Egreso
-            </p>
-            <input className={style.inputAdd}
+            <input
+              className={style.inputAdd}
               name="check2"
               type="checkbox"
               checked={formData.check2}

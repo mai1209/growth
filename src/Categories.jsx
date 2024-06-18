@@ -131,6 +131,7 @@ function Categorie({ onSelectCategory }) {
     singleValue: (provided) => ({
       ...provided,
       color: "#FFFFFf", // Cambia el color del texto del input
+    
     }),
     option: (provided) => ({
       ...provided,
@@ -138,13 +139,15 @@ function Categorie({ onSelectCategory }) {
       height: "100%",
       maxWidth: "600px",
       color: "#FFFFFf",
-      padding: " 20px 20px 2px 10px ",
+      padding: " 20px 50px 2px 50px ",
       "&:hover": {
         backgroundColor: "rgba(255, 52, 99, 0.74)", // Fondo más claro al pasar el ratón
       },
       display: "flex",
       justifyContent: "space-between",
-      margin:"auto"
+      alingItems:"center",
+      margin:"auto",
+
   
 
     }),
@@ -156,6 +159,7 @@ function Categorie({ onSelectCategory }) {
       backgroundColor: "rgba(7, 7, 7,  0.863)",
       border: "1px solid #FF3465",
       borderRadius: "16px",
+      
     
      
     }),
@@ -173,6 +177,7 @@ function Categorie({ onSelectCategory }) {
       "&::-webkit-scrollbar-track": {
         background: "rgb(7, 7, 7)",
       },
+    
     }),
     placeholder: (provided) => ({
       ...provided,
@@ -193,7 +198,7 @@ function Categorie({ onSelectCategory }) {
         options={options}
         onChange={handleChange}
         styles={customStyles}
-        placeholder="Seleccionar una opción"
+        placeholder="Escoja una categoría"
         components={{ Option: IconOption, SingleValue }}
       ></Select>
     </div>
