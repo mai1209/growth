@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:ital,wght@1,200..1000&display=swap");
+
+
+
+.btn{
+    border: 1px solid white;
+    width: fit-content;
+    margin-top: 10%;
+    margin-left: 9%;
+    border-radius: 50px;
+    padding: 3px 6px;
+}
+.btn svg{
+    color: #FFFFFF;
+    width: 26px;
+    height: 26px;
+}
+
+.title{
+    color: #FF3465;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    width: 319px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.description{
+    color: #FFFFFF ;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    width: 319px;
+    margin: auto;
+    
+}
+
+.formContainer{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 343px;
+    margin: auto
+    
+}
+
+label{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid  #FF3465;
+    padding: 5px; 
+    border-radius: 16px;
+  }
+
+.input{
+   background: none;
+    border: none;
+    outline: none;
+    padding-left: 10px; 
+    flex-grow: 1;
+}
+
+.icon{
+    color: #FF3465;
+    padding-left: 8px;
+}
+
+
+
+.forgotPassword{
+    color: #FF3465;
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+   padding-top: 8px;
+    width: 319px;
+    margin: auto;
+
+}
+
+.BtnLogIn{
+    border-radius: 16px;
+    border: 1px solid  #FF3465;
+    height: 50px;
+    width: 343px;
+    margin: auto;
+    background-color:  #FF3465;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    
+   
+}
+
+.BtnLogInGoogle{
+    border-radius: 16px;
+    border: 1px solid  #FF3465;
+    height: 50px;
+    width: 343px;
+    margin: auto;
+    background:none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.iconGoogle{
+    height:24px ;
+    width:24px ;
+}
+.register{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+   justify-content: center;
+    display: flex;
+   gap: 4px;
+}
+
+.span{
+    color: #FF3465;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    
+
+}
+
+.containerBtn{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}

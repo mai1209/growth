@@ -92,9 +92,9 @@ function Add() {
 
   const getTodayDate = () => {
     const today = new Date();
-  const options = { weekday: "long" };
-  const dayName = today.toLocaleDateString("es-ES", options);
-  return dayName.charAt(0).toUpperCase() + dayName.slice(1);
+    const options = { weekday: "long" };
+    const dayName = today.toLocaleDateString("es-ES", options);
+    return dayName.charAt(0).toUpperCase() + dayName.slice(1);
   };
 
   //mostrar un error cuando se clickean los dos checkbox
